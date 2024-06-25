@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="TaskManager.Views.TaskListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TaskManager.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="145" Width="480">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="taskDescriptionText" Text="{Binding Description}" TextWrapping="Wrap" Grid.Row="1" Margin="20 0" Foreground="{StaticResource TaskText}"/>
+
+      
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="taskTitleText" Grid.Column="0" Text="{Binding Title}" Style="{StaticResource TaskTitle}" Margin="20 0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{StaticResource TaskTitleText}"/>
+
+            <Border x:Name="borderTaskCathegory" Grid.Column="1" CornerRadius="3" Background="{StaticResource TestBorder}" Padding="20 0" Height="23" HorizontalAlignment="Right" Margin="0,8,10,8" Width="auto">
+                <TextBlock x:Name="textTaskListItemCathegory" Text="{Binding TaskCathegoryS}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Width="auto"/>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

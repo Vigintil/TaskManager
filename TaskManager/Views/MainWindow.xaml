@@ -1,0 +1,132 @@
+﻿<Window x:Class="TaskManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TaskManager.ViewModel"
+        xmlns:local="clr-namespace:TaskManager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="832" Width="1280"
+        MinWidth="1150"
+        MinHeight="450" Loaded="Window_Loaded">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Storyboard x:Key="SlideOnLoad">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.0" To="1.0" Duration="0:0:1">
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0, 100, 0, 0" To="0, 0, 0, 0" Duration="0:0:1">
+                <ThicknessAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
+        </Storyboard>
+    </Window.Resources>
+    <Grid Opacity="1" Margin="0">
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}"/>
+            </EventTrigger>
+        </Grid.Triggers>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="494"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="140"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Навигационная панель-->
+        <Rectangle Fill="{StaticResource Main}"/>
+
+        
+        <!--Список задач-->
+        <Rectangle Fill="{StaticResource TaskListBackground}" Grid.Column="1"/>
+
+        <Grid Grid.Column="1" Opacity="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="38"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Label Style="{StaticResource Headerh1}" Content="Задачи" VerticalAlignment="Center" Padding="20 0 0 0" IsHitTestVisible="False"/>
+
+            <Button Style="{StaticResource RoundButton}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="40" Margin="0 0 20 0" Command="{Binding IOpenNewWindow}">
+                <Button.DataContext>
+                    <vm:MainWindowViewModel/>
+                </Button.DataContext>
+                <Viewbox>
+                    <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnMain}"/>
+                </Viewbox>
+            </Button>
+
+           
+
+            <ListView x:Name="taskListView" Grid.Row="2" Background="Transparent" Margin="0 20" BorderBrush="Transparent" ItemsSource="{Binding Items}" SelectionChanged="taskListView_SelectionChanged">
+                <!--<ListView.DataContext>
+                    <local:MainWindow/>
+                </ListView.DataContext>-->
+            </ListView>
+
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Grid Margin="20 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="selectedTaskTitle" Style="{StaticResource TaskTitle}" VerticalAlignment="Center" Text="Название задачи"/>
+
+                <Border x:Name="selectedTaskCathegoryBorder" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="20 5" CornerRadius="5" Background="Gray">
+                    <TextBlock x:Name="selectedTaskCathegory" Text="Категория" Foreground="White" FontWeight="Normal" FontSize="12">
+
+                    </TextBlock>
+                </Border>
+
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <TextBlock x:Name="selectedTaskDescription" Text="Короткое описание задачи" FontSize="16" Foreground="{StaticResource TestText}" Margin="0 20"/>
+                </ScrollViewer>
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="0 20 0 0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Style="{StaticResource TaskTitle}" Text="Пункты задачи" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                <ListView x:Name="checkListView" ItemsSource="{Binding CheckItems}" Grid.Row="1" Background="Transparent" BorderThickness="0"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource DeleteButton}" Content="Удалить" Margin="20 0 0 0" Click="Button_Click_1"/>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource EditButton}" Content="Изменить" Click="Button_Click_2"/>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource CompleteButton}" Content="Выполнить" Margin="0 0 20 0" Click="Button_Click"/>
+            </Grid>
+        </Grid>
+
+        <Rectangle Fill="{StaticResource TaskStatusBackground}" Grid.Column="3"/>
+
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="140" />
+            </Grid.RowDefinitions>
+        </Grid>
+
+    </Grid>
+</Window>
