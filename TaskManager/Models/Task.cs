@@ -16,39 +16,12 @@ namespace TaskManager.Models
         public DateTime StartDate { get; set; }
         public bool IsCompleted { get; set; }
         public TimeSpan Timer { get; set; }
-        public TaskState TaskState { get; set; }
         public TaskPriority TaskPriority { get; set; }
         public TaskCategory TaskCategory { get; set; }
         public ObservableCollection<TaskChecklist> TaskChecklist { get; set; }
     }
 
-    public enum TaskState
-    {
-        /// <summary>
-        /// Задача в процессе
-        /// </summary>
-        InProgress,
-        /// <summary>
-        /// Задача выполнена
-        /// </summary>
-        Completed,
-        /// <summary>
-        /// Задача не начата
-        /// </summary>
-        NotStarted,
-        /// <summary>
-        /// Задача просрочена
-        /// </summary>
-        Late,
-        /// <summary>
-        /// Задача архивирована (отложена)
-        /// </summary>
-        Archived,
-        /// <summary>
-        /// Задача удалена
-        /// </summary>
-        Deleted
-    }
+    
 
     public enum TaskCategory
     {
