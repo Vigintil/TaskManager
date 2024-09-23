@@ -16,9 +16,7 @@ using TaskManager.ViewModel;
 
 namespace TaskManager.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для TaskChecklistItem.xaml
-    /// </summary>
+
     public partial class TaskChecklistItem : UserControl
     {
         public TaskChecklistItem()

@@ -16,9 +16,6 @@ using TaskManager.ViewModel;
 
 namespace TaskManager
 {
-    /// <summary>
-    /// Логика взаимодействия для EditTaskWindow.xaml
-    /// </summary>
     public partial class EditTaskWindow : Window
     {
         public EditTaskWindow()
@@ -79,37 +76,37 @@ namespace TaskManager
 
             switch (cathegorySelection.Text)
             {
-                case "Работа":
+                case "Work":
                     task.TaskCategory = TaskCategory.Work; break;
-                case "Личное":
+                case "Personal":
                     task.TaskCategory = TaskCategory.Personal; break;
-                case "Дом":
+                case "Home":
                     task.TaskCategory = TaskCategory.Home; break;
-                case "Здоровье":
+                case "Health":
                     task.TaskCategory = TaskCategory.Health; break;
-                case "Финансы":
+                case "Finance":
                     task.TaskCategory = TaskCategory.Finance; break;
-                case "Покупки":
+                case "Shopping":
                     task.TaskCategory = TaskCategory.Shopping; break;
-                case "Социальное":
+                case "Social":
                     task.TaskCategory = TaskCategory.Social; break;
-                case "Обучение":
+                case "Education":
                     task.TaskCategory = TaskCategory.Education; break;
-                case "Прогулки":
+                case "Walks":
                     task.TaskCategory = TaskCategory.Walks; break;
-                case "Хобби":
+                case "Hobbies":
                     task.TaskCategory = TaskCategory.Hobbies; break;
-                case "Дни рождения":
+                case "Birthdates":
                     task.TaskCategory = TaskCategory.Birthdates; break;
-                case "Проекты":
+                case "Projects":
                     task.TaskCategory = TaskCategory.Projects; break;
-                case "Долгосрочные планы":
+                case "Long Term Goals":
                     task.TaskCategory = TaskCategory.LongTermGoals; break;
-                case "Идеи":
+                case "Ideas":
                     task.TaskCategory = TaskCategory.Ideas; break;
-                case "Игры":
+                case "Games":
                     task.TaskCategory = TaskCategory.Games; break;
-                case "Праздники":
+                case "Holidays":
                     task.TaskCategory = TaskCategory.Holidays; break;
             }
 

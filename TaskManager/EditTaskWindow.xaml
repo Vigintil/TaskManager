@@ -52,10 +52,10 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
                 <TextBox x:Name="textblockSubtask" Grid.Row="0" Margin="5 0 5 5"/>
-                <Button Content="Добавить подзадачу" HorizontalAlignment="Center" Margin="5" Grid.Row="1" Style="{StaticResource CompleteButton}" Click="Button_Click" Padding="2"/>
-                <Button Content="Удалить подзадачу" HorizontalAlignment="Center" Margin="5" Grid.Row="2" Style="{StaticResource DeleteButton}" Padding="2" Click="Button_Click_1"/>
+                <Button Content="Add subtask" HorizontalAlignment="Center" Margin="5" Grid.Row="1" Style="{StaticResource CompleteButton}" Click="Button_Click" Padding="5"/>
+                <Button Content="Remove subtask" HorizontalAlignment="Center" Margin="5" Grid.Row="2" Style="{StaticResource DeleteButton}" Padding="5" Click="Button_Click_1"/>
             </Grid>
         </Grid>
-        <Button Content="Добавить" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 5 5 10" FontSize="10" Style="{StaticResource CompleteButton}" Click="Button_Click_2"/>
+        <Button Content="Add" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 5 5 10" FontSize="10" Style="{StaticResource CompleteButton}" Click="Button_Click_2"/>
     </Grid>
 </Window>

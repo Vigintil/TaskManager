@@ -19,9 +19,6 @@ using TaskManager.Models;
 
 namespace TaskManager
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public TaskListItem[] Items { get; set; }
@@ -43,7 +40,7 @@ namespace TaskManager
             viewModel = new TaskViewModel();
             taskListView.Items.Clear();
             viewModel.LoadTasks();
-            //taskListView = new ListView();
+
             Items = new TaskListItem[viewModel.Tasks.Count];
             for (int i = 0; i < Items.Length; i++)
             {
@@ -64,37 +61,37 @@ namespace TaskManager
                 switch (Items[i].TaskCategory)
                 {
                     case TaskCategory.Work:
-                        Items[i].borderTaskCathegory.Background = Brushes.Red; Items[i].textTaskListItemCathegory.Text = "Работа"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Red; Items[i].textTaskListItemCathegory.Text = "Work"; break;
                     case TaskCategory.Personal:
-                        Items[i].borderTaskCathegory.Background = Brushes.LightBlue; Items[i].textTaskListItemCathegory.Text = "Личное"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.LightBlue; Items[i].textTaskListItemCathegory.Text = "Personal"; break;
                     case TaskCategory.Home:
-                        Items[i].borderTaskCathegory.Background = Brushes.Gray; Items[i].textTaskListItemCathegory.Text = "Дом"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Gray; Items[i].textTaskListItemCathegory.Text = "Home"; break;
                     case TaskCategory.Health:
-                        Items[i].borderTaskCathegory.Background = Brushes.Pink; Items[i].textTaskListItemCathegory.Text = "Здоровье"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Pink; Items[i].textTaskListItemCathegory.Text = "Health"; break;
                     case TaskCategory.Finance:
-                        Items[i].borderTaskCathegory.Background = Brushes.LightGreen; Items[i].textTaskListItemCathegory.Text = "Финансы"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.LightGreen; Items[i].textTaskListItemCathegory.Text = "Finance"; break;
                     case TaskCategory.Shopping:
-                        Items[i].borderTaskCathegory.Background = Brushes.Green; Items[i].textTaskListItemCathegory.Text = "Покупки"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Green; Items[i].textTaskListItemCathegory.Text = "Shopping"; break;
                     case TaskCategory.Social:
-                        Items[i].borderTaskCathegory.Background = Brushes.MediumBlue; Items[i].textTaskListItemCathegory.Text = "Социальное"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.MediumBlue; Items[i].textTaskListItemCathegory.Text = "Social"; break;
                     case TaskCategory.Education:
-                        Items[i].borderTaskCathegory.Background = Brushes.Cyan; Items[i].textTaskListItemCathegory.Text = "Обучение"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Cyan; Items[i].textTaskListItemCathegory.Text = "Education"; break;
                     case TaskCategory.Walks:
-                        Items[i].borderTaskCathegory.Background = Brushes.Yellow; Items[i].textTaskListItemCathegory.Text = "Прогулки"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Yellow; Items[i].textTaskListItemCathegory.Text = "Walks"; break;
                     case TaskCategory.Hobbies:
-                        Items[i].borderTaskCathegory.Background = Brushes.ForestGreen; Items[i].textTaskListItemCathegory.Text = "Хобби"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.ForestGreen; Items[i].textTaskListItemCathegory.Text = "Hobbies"; break;
                     case TaskCategory.Birthdates:
-                        Items[i].borderTaskCathegory.Background = Brushes.Snow; Items[i].textTaskListItemCathegory.Text = "Дни рождения"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Snow; Items[i].textTaskListItemCathegory.Text = "Birthdates"; break;
                     case TaskCategory.Projects:
-                        Items[i].borderTaskCathegory.Background = Brushes.Brown; Items[i].textTaskListItemCathegory.Text = "Проекты"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Brown; Items[i].textTaskListItemCathegory.Text = "Projects"; break;
                     case TaskCategory.LongTermGoals:
-                        Items[i].borderTaskCathegory.Background = Brushes.Goldenrod; Items[i].textTaskListItemCathegory.Text = "Долгосрочные планы"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Goldenrod; Items[i].textTaskListItemCathegory.Text = "Long Term Goals"; break;
                     case TaskCategory.Ideas:
-                        Items[i].borderTaskCathegory.Background = Brushes.LightYellow; Items[i].textTaskListItemCathegory.Text = "Идеи"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.LightYellow; Items[i].textTaskListItemCathegory.Text = "Ideas"; break;
                     case TaskCategory.Games:
-                        Items[i].borderTaskCathegory.Background = Brushes.Violet; Items[i].textTaskListItemCathegory.Text = "Игры"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Violet; Items[i].textTaskListItemCathegory.Text = "Games"; break;
                     case TaskCategory.Holidays:
-                        Items[i].borderTaskCathegory.Background = Brushes.Orange; Items[i].textTaskListItemCathegory.Text = "Праздники"; break;
+                        Items[i].borderTaskCathegory.Background = Brushes.Orange; Items[i].textTaskListItemCathegory.Text = "Holidays"; break;
                 }
 
                 taskListView.Items.Add(Items[i]);
@@ -121,37 +118,37 @@ namespace TaskManager
                 switch (Items[taskListView.SelectedIndex].TaskCategory)
                 {
                     case TaskCategory.Work:
-                        selectedTaskCathegoryBorder.Background = Brushes.Red; selectedTaskCathegory.Text = "Работа"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Red; selectedTaskCathegory.Text = "Work"; break;
                     case TaskCategory.Personal:
-                        selectedTaskCathegoryBorder.Background = Brushes.LightBlue; selectedTaskCathegory.Text = "Личное"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.LightBlue; selectedTaskCathegory.Text = "Personal"; break;
                     case TaskCategory.Home:
-                        selectedTaskCathegoryBorder.Background = Brushes.Gray; selectedTaskCathegory.Text = "Дом"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Gray; selectedTaskCathegory.Text = "Home"; break;
                     case TaskCategory.Health:
-                        selectedTaskCathegoryBorder.Background = Brushes.Pink; selectedTaskCathegory.Text = "Здоровье"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Pink; selectedTaskCathegory.Text = "Health"; break;
                     case TaskCategory.Finance:
-                        selectedTaskCathegoryBorder.Background = Brushes.LightGreen; selectedTaskCathegory.Text = "Финансы"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.LightGreen; selectedTaskCathegory.Text = "Finance"; break;
                     case TaskCategory.Shopping:
-                        selectedTaskCathegoryBorder.Background = Brushes.Green; selectedTaskCathegory.Text = "Покупки"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Green; selectedTaskCathegory.Text = "Shopping"; break;
                     case TaskCategory.Social:
-                        selectedTaskCathegoryBorder.Background = Brushes.MediumBlue; selectedTaskCathegory.Text = "Социальное"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.MediumBlue; selectedTaskCathegory.Text = "Social"; break;
                     case TaskCategory.Education:
-                        selectedTaskCathegoryBorder.Background = Brushes.Cyan; selectedTaskCathegory.Text = "Обучение"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Cyan; selectedTaskCathegory.Text = "Education"; break;
                     case TaskCategory.Walks:
-                        selectedTaskCathegoryBorder.Background = Brushes.Yellow; selectedTaskCathegory.Text = "Прогулки"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Yellow; selectedTaskCathegory.Text = "Walks"; break;
                     case TaskCategory.Hobbies:
-                        selectedTaskCathegoryBorder.Background = Brushes.ForestGreen; selectedTaskCathegory.Text = "Хобби"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.ForestGreen; selectedTaskCathegory.Text = "Hobbies"; break;
                     case TaskCategory.Birthdates:
-                        selectedTaskCathegoryBorder.Background = Brushes.Snow; selectedTaskCathegory.Text = "День рождения"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Snow; selectedTaskCathegory.Text = "Birthdates"; break;
                     case TaskCategory.Projects:
-                        selectedTaskCathegoryBorder.Background = Brushes.Brown; selectedTaskCathegory.Text = "Проекты"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Brown; selectedTaskCathegory.Text = "Projects"; break;
                     case TaskCategory.LongTermGoals:
-                        selectedTaskCathegoryBorder.Background = Brushes.Goldenrod; selectedTaskCathegory.Text = "Долгосрочные планы"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Goldenrod; selectedTaskCathegory.Text = "Long Term Goals"; break;
                     case TaskCategory.Ideas:
-                        selectedTaskCathegoryBorder.Background = Brushes.LightYellow; selectedTaskCathegory.Text = "Идеи"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.LightYellow; selectedTaskCathegory.Text = "Ideas"; break;
                     case TaskCategory.Games:
-                        selectedTaskCathegoryBorder.Background = Brushes.Violet; selectedTaskCathegory.Text = "Игры"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Violet; selectedTaskCathegory.Text = "Games"; break;
                     case TaskCategory.Holidays:
-                        selectedTaskCathegoryBorder.Background = Brushes.Orange; selectedTaskCathegory.Text = "Праздники"; break;
+                        selectedTaskCathegoryBorder.Background = Brushes.Orange; selectedTaskCathegory.Text = "Holidays"; break;
                 }
 
                 viewModel.LoadTasks();

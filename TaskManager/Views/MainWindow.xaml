@@ -39,11 +39,11 @@
             <ColumnDefinition Width="140"/>
         </Grid.ColumnDefinitions>
 
-        <!--Навигационная панель-->
+
         <Rectangle Fill="{StaticResource Main}"/>
 
         
-        <!--Список задач-->
+
         <Rectangle Fill="{StaticResource TaskListBackground}" Grid.Column="1"/>
 
         <Grid Grid.Column="1" Opacity="1">
@@ -53,7 +53,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <Label Style="{StaticResource Headerh1}" Content="Задачи" VerticalAlignment="Center" Padding="20 0 0 0" IsHitTestVisible="False"/>
+            <Label Style="{StaticResource Headerh1}" Content="Tasks" VerticalAlignment="Center" Padding="20 0 0 0" IsHitTestVisible="False"/>
 
             <Button Style="{StaticResource RoundButton}" HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="40" Margin="0 0 20 0" Command="{Binding IOpenNewWindow}">
                 <Button.DataContext>
@@ -67,9 +67,7 @@
            
 
             <ListView x:Name="taskListView" Grid.Row="2" Background="Transparent" Margin="0 20" BorderBrush="Transparent" ItemsSource="{Binding Items}" SelectionChanged="taskListView_SelectionChanged">
-                <!--<ListView.DataContext>
-                    <local:MainWindow/>
-                </ListView.DataContext>-->
+
             </ListView>
 
         </Grid>
@@ -88,16 +86,16 @@
                     <RowDefinition Height="30" />
                 </Grid.RowDefinitions>
 
-                <TextBlock x:Name="selectedTaskTitle" Style="{StaticResource TaskTitle}" VerticalAlignment="Center" Text="Название задачи"/>
+                <TextBlock x:Name="selectedTaskTitle" Style="{StaticResource TaskTitle}" VerticalAlignment="Center" Text="Task name"/>
 
                 <Border x:Name="selectedTaskCathegoryBorder" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="20 5" CornerRadius="5" Background="Gray">
-                    <TextBlock x:Name="selectedTaskCathegory" Text="Категория" Foreground="White" FontWeight="Normal" FontSize="12">
+                    <TextBlock x:Name="selectedTaskCathegory" Text="Category" Foreground="White" FontWeight="Normal" FontSize="12">
 
                     </TextBlock>
                 </Border>
 
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <TextBlock x:Name="selectedTaskDescription" Text="Короткое описание задачи" FontSize="16" Foreground="{StaticResource TestText}" Margin="0 20"/>
+                    <TextBlock x:Name="selectedTaskDescription" Text="Task description" FontSize="16" Foreground="{StaticResource TestText}" Margin="0 20"/>
                 </ScrollViewer>
             </Grid>
 
@@ -107,14 +105,14 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Style="{StaticResource TaskTitle}" Text="Пункты задачи" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                <TextBlock Style="{StaticResource TaskTitle}" Text="Task checklist" VerticalAlignment="Center" Margin="20 0 0 0"/>
                 <ListView x:Name="checkListView" ItemsSource="{Binding CheckItems}" Grid.Row="1" Background="Transparent" BorderThickness="0"/>
             </Grid>
 
             <Grid Grid.Row="2">
-                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource DeleteButton}" Content="Удалить" Margin="20 0 0 0" Click="Button_Click_1"/>
-                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource EditButton}" Content="Изменить" Click="Button_Click_2"/>
-                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource CompleteButton}" Content="Выполнить" Margin="0 0 20 0" Click="Button_Click"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource DeleteButton}" Content="Delete" Margin="20 0 0 0" Click="Button_Click_1"/>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource EditButton}" Content="Edit" Click="Button_Click_2"/>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource CompleteButton}" Content="Complete" Margin="0 0 20 0" Click="Button_Click"/>
             </Grid>
         </Grid>
 

@@ -19,44 +19,43 @@ namespace TaskManager.ViewModel
         public DateTime StartDate { get; set; }
         public bool IsCompleted { get; set; }
         public TimeSpan Timer { get; set; }
-        public TaskState TaskState { get; set; }
         public TaskPriority TaskPriority { get; set; }
         public TaskCategory TaskCategory { get; set; }
         public string TaskCategoryS { get { return ""; } set 
             { 
                 switch (value)
                 {
-                    case "System.Windows.Controls.ComboBoxItem: Работа":
+                    case "System.Windows.Controls.ComboBoxItem: Work":
                         TaskCategory = TaskCategory.Work; break;
-                    case "System.Windows.Controls.ComboBoxItem: Личное":
+                    case "System.Windows.Controls.ComboBoxItem: Personal":
                         TaskCategory = TaskCategory.Personal; break;
-                    case "System.Windows.Controls.ComboBoxItem: Дом":
+                    case "System.Windows.Controls.ComboBoxItem: Home":
                         TaskCategory = TaskCategory.Home; break;
-                    case "System.Windows.Controls.ComboBoxItem: Здоровье":
+                    case "System.Windows.Controls.ComboBoxItem: Health":
                         TaskCategory = TaskCategory.Health; break;
-                    case "System.Windows.Controls.ComboBoxItem: Финансы":
+                    case "System.Windows.Controls.ComboBoxItem: Finance":
                         TaskCategory = TaskCategory.Finance; break;
-                    case "System.Windows.Controls.ComboBoxItem: Покупки":
+                    case "System.Windows.Controls.ComboBoxItem: Shopping":
                         TaskCategory = TaskCategory.Shopping; break;
-                    case "System.Windows.Controls.ComboBoxItem: Социальное":
+                    case "System.Windows.Controls.ComboBoxItem: Social":
                         TaskCategory = TaskCategory.Social; break;
-                    case "System.Windows.Controls.ComboBoxItem: Обучение":
+                    case "System.Windows.Controls.ComboBoxItem: Education":
                         TaskCategory = TaskCategory.Education; break;
-                    case "System.Windows.Controls.ComboBoxItem: Походы":
+                    case "System.Windows.Controls.ComboBoxItem: Walks":
                         TaskCategory = TaskCategory.Walks; break;
-                    case "System.Windows.Controls.ComboBoxItem: Хобби":
+                    case "System.Windows.Controls.ComboBoxItem: Hobbies":
                         TaskCategory = TaskCategory.Hobbies; break;
-                    case "System.Windows.Controls.ComboBoxItem: День рождения":
+                    case "System.Windows.Controls.ComboBoxItem: Birthdates":
                         TaskCategory = TaskCategory.Birthdates; break;
-                    case "System.Windows.Controls.ComboBoxItem: Проекты":
+                    case "System.Windows.Controls.ComboBoxItem: Projects":
                         TaskCategory = TaskCategory.Projects; break;
-                    case "System.Windows.Controls.ComboBoxItem: Долгосрочные планы":
+                    case "System.Windows.Controls.ComboBoxItem: Long Term Goals":
                         TaskCategory = TaskCategory.LongTermGoals; break;
-                    case "System.Windows.Controls.ComboBoxItem: Идеи":
+                    case "System.Windows.Controls.ComboBoxItem: Ideas":
                         TaskCategory = TaskCategory.Ideas; break;
-                    case "System.Windows.Controls.ComboBoxItem: Игры":
+                    case "System.Windows.Controls.ComboBoxItem: Games":
                         TaskCategory = TaskCategory.Games; break;
-                    case "System.Windows.Controls.ComboBoxItem: Праздники":
+                    case "System.Windows.Controls.ComboBoxItem: Holidays":
                         TaskCategory = TaskCategory.Holidays; break;
                 }
             } }
@@ -100,7 +99,6 @@ namespace TaskManager.ViewModel
                 TaskCategory = this.TaskCategory,
                 TaskChecklist = this.TaskChecklist,
                 TaskPriority = TaskPriority.Medium,
-                TaskState = TaskState.Late,
                 Timer = new TimeSpan(0),
             };
 

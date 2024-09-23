@@ -20,20 +20,20 @@
 
         <Border BorderBrush="Gray" BorderThickness="1" Grid.Row="0">
             <StackPanel>
-                <Label Content="Название" VerticalAlignment="Top" FontSize="13"/>
+                <Label Content="Task" VerticalAlignment="Top" FontSize="13"/>
                 <TextBox Style="{StaticResource NewTaskTitleBar}" Margin="10,0,10,0" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" x:Name="newTaskWindowTitle"/>
             </StackPanel>
         </Border>
         <Border BorderBrush="Gray" BorderThickness="1 0 1 1" Grid.Row="1">
             <StackPanel>
-                <Label Content="Описание" VerticalAlignment="Top" FontSize="13"/>
+                <Label Content="Description" VerticalAlignment="Top" FontSize="13"/>
                 <TextBox Height="40" VerticalAlignment="Top" x:Name="newTaskWindowDescription" Grid.Row="1" BorderThickness="1" Style="{StaticResource NewTaskTitleBar}" Margin="10,0,10,0" TextAlignment="Left"  HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontWeight="Normal" AcceptsReturn="True" IsUndoEnabled="True" IsInactiveSelectionHighlightEnabled="True" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
         </Border>
 
         <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1 0 1 1">
             <StackPanel>
-                <Label Content="Категория" FontSize="11"/>
+                <Label Content="Category" FontSize="11"/>
                 <ComboBox SelectedIndex="0" Background="DarkGray" x:Name="cathegorySelection" Width="124" HorizontalAlignment="Left" Margin="5,0,0,5" SelectedItem="{Binding TaskCategoryS, UpdateSourceTrigger=PropertyChanged}">
                     <ComboBoxItem Content="Работа"/>
                     <ComboBoxItem Content="Личное"/>
@@ -58,7 +58,7 @@
 
         <Border Grid.Row="3" BorderBrush="Gray" BorderThickness="1 0 1 1">
             <StackPanel>
-                <Label Content="Подзадачи" VerticalAlignment="Top" FontSize="13"/>
+                <Label Content="Checklist" VerticalAlignment="Top" FontSize="13"/>
                 <Grid Height="100">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
@@ -73,13 +73,13 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <TextBox x:Name="textblockSubtask" Grid.Row="0" Margin="5 0 5 5"/>
-                        <Button Content="Добавить подзадачу" HorizontalAlignment="Center" Margin="5" Grid.Row="1" Style="{StaticResource CompleteButton}" Click="Button_Click" Padding="2"/>
-                        <Button Content="Удалить подзадачу" HorizontalAlignment="Center" Margin="5" Grid.Row="2" Style="{StaticResource DeleteButton}" Padding="2" Click="Button_Click_1"/>
+                        <Button Content="Add subtask" HorizontalAlignment="Center" Margin="5" Grid.Row="1" Style="{StaticResource CompleteButton}" Click="Button_Click" Padding="2"/>
+                        <Button Content="Remove subtask" HorizontalAlignment="Center" Margin="5" Grid.Row="2" Style="{StaticResource DeleteButton}" Padding="2" Click="Button_Click_1"/>
                     </Grid>
                 </Grid>
             </StackPanel>
         </Border>
-        <Button Content="Добавить" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 5 5 10" FontSize="10" Style="{StaticResource CompleteButton}" Command="{Binding IAddNewTask}"/>
+        <Button Content="Add" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 5 5 10" FontSize="10" Style="{StaticResource CompleteButton}" Command="{Binding IAddNewTask}"/>
 
     </Grid>
 </Window>

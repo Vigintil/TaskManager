@@ -17,9 +17,7 @@ using TaskManager.ViewModel;
 
 namespace TaskManager.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для NewTaskWindow.xaml
-    /// </summary>
+
     public partial class NewTaskWindow : Window
     {
         public NewTaskWindow()

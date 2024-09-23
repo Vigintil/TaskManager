@@ -18,9 +18,7 @@ using TaskManager.ViewModel;
 
 namespace TaskManager.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для TaskListItem.xaml
-    /// </summary>
+
     public partial class TaskListItem : UserControl
     {
         public int Id { get; set; }
